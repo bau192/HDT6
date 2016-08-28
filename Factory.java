@@ -10,21 +10,22 @@ public class Factory {
 	}
 
 	public Set crearObj(int numero){
-		
+		try {
 		switch(numero){
 		
 			case 1:
 					return new HashSet();
-			
-			
 			case 2: 
 					return new TreeSet();
-			
-			
 			case 3:
 				return new LinkedHashSet();
 		}
+		}
+		catch (Exception e){
+			System.out.println("Ingrese un numero correcto!");
+		}
 		return null;
+		
 		
 	} 
 }
