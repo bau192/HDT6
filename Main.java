@@ -32,7 +32,7 @@ public class Main {
 				{
 					Factory conjunto = new Factory();
 					conjunto.crearObj(numero);
-					
+				
 					System.out.println(instruccion2);
 					nombre = scanner2.nextLine();
 					
@@ -41,14 +41,19 @@ public class Main {
 					
 					System.out.println(instruccion3);
 					numero2 = scanner3.nextInt();
-					
-					sort.setNumero2(numero2);
-					
-					sort.SortInfo(conjunto);
-					
-					System.out.println(instruccion4);
-					ciclo = scanner4.next();
-					
+					if (numero2<4 && numero2>0)
+					{
+						
+						sort.setNumero2(numero2);
+						
+						sort.SortInfo(conjunto);
+						
+						System.out.println(instruccion4);
+						ciclo = scanner4.next();
+					}
+					else{
+						System.out.println("Ingrese un numero correcto!");
+					}
 				}
 				
 				else 
@@ -59,7 +64,7 @@ public class Main {
 			
 			Sort sort1 = new Sort();
 			
-			sort1.printJava();
+			/*sort1.printJava();
 			sort1.printWeb();
 			sort1.printMovil();
 			
@@ -69,11 +74,14 @@ public class Main {
 			sort1.printSubconjunto();
 			
 			sort1.conjuntoMayor();
-			sort1.conjuntoMenor();
-			
+			sort1.conjuntoMenor();*/
+		
+		System.out.print("Adios!");
 		scanner.close();
 		scanner2.close();
 		scanner3.close();
 		scanner4.close();
 
 	}
+
+}
