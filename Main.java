@@ -27,47 +27,48 @@ public class Main {
 			{	
 				System.out.println(instruccion1);
 				numero = scanner.nextInt();
+				if(numero<4 && numero>0)
+					
+				{
+					Factory conjunto = new Factory();
+					conjunto.crearObj(numero);
+					
+					System.out.println(instruccion2);
+					nombre = scanner2.nextLine();
+					
+					Sort sort = new Sort();
+					sort.setNombre(nombre);
+					
+					System.out.println(instruccion3);
+					numero2 = scanner3.nextInt();
+					
+					sort.setNumero2(numero2);
+					
+					sort.SortInfo(conjunto);
+					
+					System.out.println(instruccion4);
+					ciclo = scanner4.next();
+					
+				}
 				
-				
-				Factory conjunto = new Factory();
-				conjunto.crearObj(numero);
-				
-				System.out.println(instruccion2);
-				nombre = scanner2.nextLine();
-				
-				
-				Sort sort = new Sort();
-				sort.setNombre(nombre);
-				
-				System.out.println(instruccion3);
-				numero2 = scanner3.nextInt();
-				
-				
-				sort.setNumero(numero2);
-				
-				System.out.println(instruccion4);
-				ciclo = scanner4.next();
-				
-		
+				else 
+				{
+					System.out.println("Ingrese un numero correcto!");
+				}
 			}
-		
-		Sort sort1 = new Sort();
-	
-		
-		if(sort1.javaMayor()==true)
-		{
-			System.out.println("El conjunto de desarrolladores java es el mayor.");
-		}
-		if(sort1.celularesMayor()==true)
-		{
-			System.out.println("El conjunto de desarrolladores moviles es el mayor.");
-		}
-		if(sort1.webMayor()==true)
-		{
-			System.out.println("El conjunto de desarrolladores web es el mayor.");
-		}
-		
-		
+			
+			Sort sort1 = new Sort();
+			
+			sort1.printJava();
+			sort1.printWeb();
+			sort1.printMovil();
+			
+			sort1.printJavaWebMovil();
+			sort1.printJavaNoWeb();
+			sort1.printWebMovil();
+			sort1.printSubconjunto();
+			
+			
 		scanner.close();
 		scanner2.close();
 		scanner3.close();
@@ -75,4 +76,5 @@ public class Main {
 
 	}
 
+}
 }
