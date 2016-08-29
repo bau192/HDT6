@@ -2,7 +2,8 @@ import java.util.*;
 
 public class Sort{
 
-	private Set <String>[] desarrollador= new Set[4];
+	private Set <String>[] desarrollador= new Set[3];
+	private Set <String>[] impDesarrollador = new[1];
 	private String nombre;
 	private int numero,numero2;
 	
@@ -25,31 +26,53 @@ public class Sort{
 	
 	
 	public void printJava(){
-	
+		System.out.println("Desarrolladores Java:"+ desarrollador[0].toString());
 	}
 	
 	public void printWeb(){
-		
+		System.out.println("Desarrolladores Web:"+ desarrollador[1].toString());
 	}
 	
 	public void printMovil(){
-		
+		System.out.println("Desarrolladores Moviles:"+ desarrollador[2].toString());
 	}
 	
 	public void printJavaWebMovil(){
+		impDesarrollador[1].addAll(desarrollador[0]);
+		impDesarrollador[1].retainAll(desarrollador[1]);
+		impDesarrollador[1].retainAll(desarrollador[2]);
 		
+		System.out.println("Desarrolladores Java,Web y Moviles:"+ impDesarrollador[1].toString());
 	}
 	
-	public void printJavaMovil(){
+	public void printJavaNoWeb(){
+		impDesarrollador[1].clear();
+		impDesarrollador[1].addAll(desarrollador[0]);
+		impDesarrollador[1].addAll(desarrollador[1]);
+		impDesarrollador[1].removeAll(desarrollador[1]);
 		
+		System.out.println("Desarrolladores Java y no Web:"+ impDesarrollador[1].toString());
 	}
 	
 	public void printWebMovil(){
+		impDesarrollador[1].clear();
+		impDesarrollador[1].addAll(desarrollador[0]);
+		impDesarrollador[1].addAll(desarrollador[1]);
+		impDesarrollador[1].addAll(desarrollador[2]);
+		impDesarrollador[1].removeAll(desarrollador[0]);
 		
+		System.out.println("Desarrolladores Web y Moviles pero no Java:"+ impDesarrollador[1].toString());
 	}
 	
-
 	
+	public void printSubconjunto(){
+		if (desarrollador[1].contains(desarrollador[0])==true){
+			System.out.println("El conjunto de Desarrolladores Java es un subconjunto de los Desarroladores Web");
+		}
+		else {
+			System.out.println("El conjunto de Desarrolladores Java no es un subconjunto de los Desarroladores Web");
+		}
+	}
 	
 	public String getNombre(String nombre){
 		return nombre;
@@ -72,17 +95,4 @@ public class Sort{
 	public int getNumero2(){
 		return numero2;
 	}
-}
-	
-	public void setNombre(String nombre){
-		this.nombre = nombre;
-	}
-	
-	public void setNumero(int numero){
-		this.numero = numero;
-	}
-	public int getNumero(){
-		return numero;
-	}
-	
 }
