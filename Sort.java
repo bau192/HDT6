@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Sort{
 
-	private Set <String>[] desarrollador= new Set[3];
-	private Set <String>[] impDesarrollador = new[1];
+	private Set <String>[] desarrollador= new Set[4];
+	private Set <String>[] impDesarrollador = new Set[1];
 	private String nombre;
 	private int numero,numero2;
 	
@@ -17,10 +17,12 @@ public class Sort{
 		
 		for (int i = 0; i != desarrollador.length; i++) 
 		{
-			desarrollador[i] = conjunto.create(numero-1);
+			desarrollador[i]=conjunto.crearObj(i);
+			//desarrollador[i] = conjunto.create(numero-1);
 		}
 		
-		desarrollador[numero2-1].add(nombre);
+		
+		desarrollador[numero2].add(nombre);
 		
 	}
 	
@@ -39,8 +41,8 @@ public class Sort{
 	
 	public void printJavaWebMovil(){
 		impDesarrollador[1].addAll(desarrollador[0]);
-		impDesarrollador[1].retainAll(desarrollador[1]);
-		impDesarrollador[1].retainAll(desarrollador[2]);
+		impDesarrollador[1].addAll(desarrollador[1]);
+		impDesarrollador[1].addAll(desarrollador[2]);
 		
 		System.out.println("Desarrolladores Java,Web y Moviles:"+ impDesarrollador[1].toString());
 	}
@@ -74,6 +76,30 @@ public class Sort{
 		}
 	}
 	
+	public void conjuntoMayor(){
+		if(desarrollador[0].size()>desarrollador[1].size() && desarrollador[1].size()>desarrollador[2].size()){
+			System.out.println("El conjunto Java es el mayor."+desarrollador[0].toString());
+		}
+		if(desarrollador[1].size()>desarrollador[0].size() && desarrollador[0].size()>desarrollador[2].size()){
+			System.out.println("El conjunto Web es el mayor."+desarrollador[1].toString());
+		}
+		if(desarrollador[2].size()>desarrollador[0].size() && desarrollador[0].size()>desarrollador[1].size()){
+			System.out.println("El conjunto Movil es el mayor."+desarrollador[2].toString());
+		}
+	}
+	
+	public void conjuntoMenor(){
+		if(desarrollador[0].size()<desarrollador[1].size() && desarrollador[1].size()<desarrollador[2].size()){
+			System.out.println("El conjunto Java es el menor."+desarrollador[0].toString());
+		}
+		if(desarrollador[1].size()<desarrollador[0].size() && desarrollador[0].size()<desarrollador[2].size()){
+			System.out.println("El conjunto Web es el menor."+desarrollador[1].toString());
+		}
+		if(desarrollador[2].size()<desarrollador[0].size() && desarrollador[0].size()<desarrollador[1].size()){
+			System.out.println("El conjunto Movil es el menor."+desarrollador[2].toString());
+		}
+	}
+	
 	public String getNombre(String nombre){
 		return nombre;
 	}
@@ -89,7 +115,7 @@ public class Sort{
 		return numero;
 	}
 
-	public void setNumero2(int numeroH){
+	public void setNumero2(int numero2){
 		this.numero2 = numero2;
 	}
 	public int getNumero2(){
