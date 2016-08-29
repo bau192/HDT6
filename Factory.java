@@ -1,7 +1,4 @@
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Factory {
 
@@ -9,23 +6,18 @@ public class Factory {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Set crearObj(int numero){
-		try {
+	public Set<String> crearObj(int numero){
 		switch(numero){
 		
 			case 1:
-					return new HashSet();
+					return new HashSet<String>();
 			case 2: 
-					return new TreeSet();
+					return new TreeSet<String>();
 			case 3:
-				return new LinkedHashSet();
-		}
-		}
-		catch (Exception e){
-			System.out.println("Ingrese un numero correcto!");
-		}
-		return null;
-		
-		
+					return new LinkedHashSet<String>();
+			default:
+					return new HashSet<String>();
+		}	
 	} 
 }
+
