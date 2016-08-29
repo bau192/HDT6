@@ -68,6 +68,8 @@ public class Main {
 			sort1.printWebMovil();
 			sort1.printSubconjunto();
 			
+			sort1.conjuntoMayor();
+			sort1.conjuntoMenor();
 			
 		scanner.close();
 		scanner2.close();
@@ -75,6 +77,3 @@ public class Main {
 		scanner4.close();
 
 	}
-
-}
-}
