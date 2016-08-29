@@ -2,34 +2,27 @@ import java.util.*;
 
 public class Sort{
 
-	private Set <String> java;
-	private Set <String> web;
-	private Set <String> celulares;
-	private boolean conjunto = false;
+	private Set <String>[] desarrollador= new Set[4];
 	private String nombre;
-	private int numero;
+	private int numero,numero2;
+	
 	
 	public Sort()  {
 		// TODO Auto-generated constructor stub				
 	}
 	
-	public Set SortInfo(){
-		try{
-			switch(numero)
-			{
-				case 1:
-					java.add(nombre);
-				case 2:
-					web.add(nombre);
-				case 3:
-					celulares.add(nombre);
-			}
+	public void SortInfo(Factory conjunto){
+		
+		
+		for (int i = 0; i != desarrollador.length; i++) 
+		{
+			desarrollador[i] = conjunto.create(numero-1);
 		}
-		catch (Exception e){
-			System.out.println("Ingrese un numero correcto!");
-		}
-		return null;
+		
+		desarrollador[numero2-1].add(nombre);
+		
 	}
+	
 	
 	public void printJava(){
 	
@@ -55,40 +48,31 @@ public class Sort{
 		
 	}
 	
-	public boolean javaMayor()
-	{
-		if (celulares.size()<web.size() && web.size()<java.size())
-		{
-			conjunto = true;
-		}
-			return conjunto;
-		
-	}
-	
-	public boolean webMayor()
-	{
-		if (web.size()<web.size() && java.size()<celulares.size())
-		{
-			conjunto = true;
-		}
-			return conjunto;
-		
-	}
-	
-	public boolean celularesMayor()
-	{
-		if (java.size()<web.size() && web.size()<celulares.size())
-		{
-			conjunto = true;
-		}
-			return conjunto;
-		
-	}
 
+	
 	
 	public String getNombre(String nombre){
 		return nombre;
 	}
+	
+	public void setNombre(String nombre){
+		this.nombre = nombre;
+	}
+	
+	public void setNumero(int numero){
+		this.numero = numero;
+	}
+	public int getNumero(){
+		return numero;
+	}
+
+	public void setNumero2(int numeroH){
+		this.numero2 = numero2;
+	}
+	public int getNumero2(){
+		return numero2;
+	}
+}
 	
 	public void setNombre(String nombre){
 		this.nombre = nombre;
