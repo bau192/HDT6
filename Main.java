@@ -1,5 +1,9 @@
-import java.util.*;
+//Univerisidad del Valle de Guatemala
+//ADT seccion 10
+//Gerardo Molina 14492
+//Erick Bautista 15192
 
+import java.util.*;
 
 public class Main {
 
@@ -14,9 +18,8 @@ public class Main {
 		final String instruccion2 = "Ingrese el nombre del desarrollador: ";
 		final String instruccion3 = "Ingrese los siguientes numeros dependiendo el tipo de desarrolador que sea: \n 1.Desarrollador Java. \n 2.Desarrollador Web. \n 3.Desarrollador Movil.";
 		final String instruccion4 = "Si desea continuar ingresando datos ingrese 0, de lo contrario ingrese cualquier caracter: ";
-		
+		final String instruccion5="Desea imprimir Lista? s/n";
 
-		
 		Scanner scanner = new Scanner(System.in);
 		Scanner scanner2 = new Scanner(System.in);
 		Scanner scanner3 = new Scanner(System.in);
@@ -47,7 +50,10 @@ public class Main {
 						sort.setNumero2(numero2);
 						
 						sort.SortInfo(conjunto);
-						
+						System.out.println("#######################################################################");
+						System.out.println("El desarrollador "+nombre+" se almaceno como un desarrollador de tipo :"+numero2);
+						System.out.println("/n#######################################################################");
+						System.out.println("");
 						System.out.println(instruccion4);
 						ciclo = scanner4.next();
 					}
